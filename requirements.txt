@@ -1,0 +1,9 @@
+matplotlib
+numpy
+pandas
+progressbar2
+scikit_learn
+seaborn
+torch
+torchvision
+hypergrad @ git+https://github.com/prolearner/hypertorch.git
