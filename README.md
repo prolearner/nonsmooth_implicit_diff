@@ -5,17 +5,18 @@ Code for the paper
 
 
 ## Getting started
-**Install** the packages in [requirements.txt](requirements.txt). We suggest to use a GPU to speed up the computation for data poisoning. 
+**Install** the packages in [requirements.txt](requirements.txt).  
 
-Check out [elastic_net_toy.ipynb](elastic_net_toy.ipynb) for a illustrative comparison between deterministic AID and ITD derivative approximation methods for (nonsmooth) elastic net.
+Check out [elastic_net_toy.ipynb](elastic_net_toy.ipynb) for an illustrative comparison between deterministic AID and ITD derivative approximation methods for (nonsmooth) elastic net.
 
 ## How to reproduce results
 **Run** one of the following files:
    - [elastic_net_deterministic.py](elastic_net_deterministic.py) for the experiments comparing AID and ITD on computing the derivative with respect to the hyperparameters of elastic net.
    - [elastic_net_stochastic.py](elastic_net_stochastic.py) for the experiments comparing AID-FP and NSID and SID on computing the derivative with respect to the hyperparameters of elastic net.   
-   - [data_poisoning_stochastic.py](data_poisoning_stochastic.py) for the experiments comparing (N)SID with constant and decreasing step-size schedules on computing the derivative with respect to the corruption noise of the data poisoning with elastic net regularization.  
+   - [data_poisoning_stochastic.py](data_poisoning_stochastic.py) for the experiments comparing (N)SID with constant and decreasing step-size schedules on computing the derivative with respect to the corruption noise of the data poisoning with elastic net regularization. The MNIST dataset will be automatically downloaded in the data folder when first run. 
 
-Experiments will be saved in the exps folder inside the project directory, while for data poisoning, MNIST will be downloaded in the data folder.
+When the dataset is large (e.g. for data poisoning) using the GPU can speed up the computation.
+All Experiments artifacts will be saved in the exps folder inside the project directory 
 
 ## How to analyse results
 Use the notebooks in the [analyse_results](analyse_results) folder to generate plots from the data of previously run experiments.
@@ -26,7 +27,7 @@ See [hypertorch](https://github.com/prolearner/hypertorch) for more details on t
 
 [nonsmooth_implicit_diff/stoch_hg.py](nonsmooth_implicit_diff/stoch_hg.py) contains the code for the NSID method to approximate the derivaive of a fixed point which is a composition of an outer map and an inner map accessible only through a stochastic unbiased estimator.
 
-Details on the experimental settings can be found in [our paper](https://arxiv.org/abs/2403.11687). 
+Details on the experimental settings can be found in our paper. 
 
 ## Cite us
 If you use this code, please cite [our paper](https://arxiv.org/abs/2403.11687).
